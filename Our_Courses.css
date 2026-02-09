@@ -1,0 +1,1862 @@
+body {
+   font-family: 'Inter';
+  background: #fff;
+  color: #000;
+}
+body:has(#menu-toggle:checked) {
+  overflow: hidden;
+  height: 100vh;
+}
+
+/* Hide checkbox */
+#menu-toggle {
+  display: none;
+}
+
+/* Hamburger Icon */
+.navbar-icon {
+  position: absolute;
+  top: 65px;
+  right: 60px;
+  width: 35px;
+  height: 25px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  cursor: pointer;
+  z-index: 1001;
+}
+
+.navbar-icon span {
+  display: block;
+  height: 4px;
+  width: 100%;
+  background: #000000ff;
+  border-radius: 2px;
+  transition: all 0.3s ease;
+}
+
+/* Hover effect */
+.navbar-icon:hover span {
+  background: #2da9e0;
+  box-shadow: 0 0 0px ;
+}
+
+/* Transform hamburger to X */
+#menu-toggle:checked + .navbar-icon span:nth-child(1) {
+  transform: rotate(45deg) translate(9px, 6px);
+    background: #ffffffff;
+  height: 3px;
+}
+#menu-toggle:checked + .navbar-icon span:nth-child(2) {
+  opacity: 0;
+}
+#menu-toggle:checked + .navbar-icon span:nth-child(3) {
+  transform: rotate(-45deg) translate(9px, -6px);
+    background: #ffffffff;
+   height: 3px;
+}
+
+/* Navbar Drawer */
+.navbar-menu {
+  position: fixed;
+  top: 0;
+  right: -500px;   /* hidden off-screen */
+  width: 500px;
+  height: 100%;
+  background: #2da9e0;
+  box-shadow: -2px 0 10px rgba(0,0,0,0.2);
+  transition: right 0.3s ease;
+  padding: 80px 20px; /* leave space for top */
+  z-index: 1000;
+}
+
+.navbar-menu ul {
+  list-style: none;
+  padding: 0;
+  margin-top: 90px;
+  margin-Left:30px;
+  
+}
+
+.navbar-menu ul li {
+  margin: 20px 0;
+}
+
+.navbar-menu ul li a {
+  text-decoration: none;
+  color: #ffffffff;
+  font-weight: 400;
+  display: block;
+  transition: all 0.3s ease;
+  font-family: 'Inter' ;
+  font-size:40px;
+}
+
+.navbar-menu ul li a:hover {
+  color: #ffffffff;
+    transform: translateX(10px);
+
+}
+
+/* Parent item */
+.has-submenu {
+  position: relative;
+  margin:0px !important;
+}
+
+/* Submenu container */
+.submenu {
+  list-style: none;
+  padding-left: 20px;
+  margin-top: 10px;
+  max-height: 0;
+  overflow: hidden;
+  opacity: 0;
+  transition: all 0.4s ease;
+  width:300px;
+}
+
+/* Show submenu on hover */
+.has-submenu:hover .submenu {
+  max-height: 500px;
+  opacity: 1;
+}
+
+.submenu a {
+  display: inline-block;
+  position: relative;
+  width: fit-content;
+}
+
+/* Submenu links */
+.submenu li {
+  margin: 10px 0;
+}
+
+ul.submenu{
+  margin-top:0px;
+  
+}
+
+.submenu li a {
+  font-size: 18px !important;           /* smaller than main menu */
+  font-weight: 300;
+  color: #ffffffcc;
+  transition: all 0.3s ease;
+}
+
+/* Hover effect for submenu */
+.submenu li a:hover {
+  color: #ffffff;
+  transform: translateX(10px);
+}
+
+
+/* Show drawer when checked */
+#menu-toggle:checked ~ .navbar-menu {
+  right: 0;
+}
+
+.colored-text{
+  color: #88298e;
+}
+
+.and-black {
+  color: black;
+  font-weight: 700;
+}
+
+.sticky-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 2000;
+  background: transparent;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 40px;
+  transition: background 0.3s ease;
+}
+
+#logo {
+  width: 180px !important;
+  height: 64px;
+  object-fit: contain;
+}
+
+/* Top (no scroll) */
+#hamburger span {
+  background: #fff;
+}
+
+/* After scroll */
+.scrolled {
+  background: #fff;
+}
+
+.scrolled #hamburger span {
+  background: #000;
+}
+
+
+
+
+.hero-logo {
+  margin: 30px 0px 0px 55px; /* center and add space below */
+  max-width: 200px; /* adjust size as needed */
+  height: auto;
+  transition: transform 0.3s ease;
+  
+}
+.our-courses{
+  position:relative;
+   padding-top: 130px;
+   
+}
+.hero {
+  padding-top:40px;       /* remove if you added padding earlier */
+}
+
+
+
+.console-container {
+  font-size: 48px;
+  font-weight: 600;
+  text-align: center;
+
+  /* spacing fix */
+  margin: auto;
+
+  position: relative;
+  
+  line-height: 1.2;
+}
+
+.console-cursor {
+  display: inline-block;
+  margin-left: 6px;
+  font-weight: 500;
+}
+
+#dynamic-text {
+  color: #88298e;
+}
+
+
+
+.highlight {
+  color: #88298e ;
+  font-weight: 700;
+}
+
+
+.hidden {
+  opacity: 0;
+}
+
+
+
+.hero-subtitle {
+  margin-top: 70px;
+  font-size: 32px;
+  font-weight: 600;
+  margin-bottom: 15px;
+}
+.hero-text {
+  color: #666;
+  margin-bottom: 0;
+    font-weight: 400;
+    margin-bottom:10px;
+    font-size:24px;
+}
+
+
+.courses {
+  margin: 0px 0px;
+
+}
+
+.fade-bottom img {
+  display: block;
+  width: 100%;
+  max-width: 690px;
+  height: auto;
+  margin: 0 auto;
+  -webkit-mask-image: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 1) 80%,
+    rgba(0, 0, 0, 0) 100%
+  );
+  -webkit-mask-repeat: no-repeat;
+  -webkit-mask-size: 100% 100%;
+  mask-image: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 1) 60%,
+    rgba(0, 0, 0, 0) 100%
+  );
+  mask-repeat: no-repeat;
+  mask-size: 100% 100%;
+  pointer-events: none;
+  z-index: 1;
+}
+.course-label {
+  position: absolute;
+  background: #f2f2f2;
+  padding: 15px 30px;
+  border-radius: 18px;
+  font-size: 20px;
+  font-weight: 600;
+   z-index: 50;
+}
+.course-label button {
+  margin-left: 10px;
+  background: #089ee8;
+  border: none;
+  color: #fff;
+  cursor: pointer;
+  padding: 10px 30px;
+  border-radius: 8px;
+  font-size: 16px;
+   z-index: 100;
+  font-weight: 400;
+}
+.motion {
+  top: 39%;
+  left: 3%;
+  z-index: 100;
+}
+.digital { 
+  bottom: 20%;
+  left: 0%;
+}
+.graphic {   
+  top: 30.4%;
+  right: 4%;
+}
+.uiux {
+  bottom: 18%;
+  right: 2%;
+}
+.circle1{
+    top:25%;
+  left: 28%;
+  background: #ffffffff
+}
+.circle2{
+    top:82%;
+  left: 18%;
+  background: #ffffffff
+}
+.circle3{
+    top:12%;
+  left: 54%;
+  background: #ffffffff
+}
+.circle4{
+    top:46%;
+  left: 87%;
+  background: #ffffffff
+}
+.plus1{
+   top:16%;
+  left: 13%;
+  background: #ffffffff
+}
+.plus2{
+   top:50%;
+  left: 17%;
+  background: #ffffffff
+}
+.plus3{
+   top:86%;
+  left: 28%;
+  background: #ffffffff
+}
+.plus4{
+   top:10%;
+  left: 67%;
+  background: #ffffffff
+}
+.plus5{
+   top:56%;
+  left:78%;
+  background: #ffffffff
+}
+.our-courses{
+  margin-bottom:100px;
+}
+
+/* Base reveal hidden state */
+.reveal {
+  opacity: 1;
+  transform: none;
+  transition: 0.8s ease;
+}
+
+/* Reveal directions */
+.reveal-left {
+  transform: translateX(-40px);
+}
+
+.reveal-right {
+  transform: translateX(40px);
+}
+
+.reveal-up {
+  transform: translateY(40px);
+}
+
+.reveal-down {
+  transform: translateY(-40px);
+}
+
+
+/* ================== Student image ================== */
+.fade-bottom {
+  animation: student-float 4s ease-in-out infinite;
+  transform-origin: center bottom;
+}
+
+@keyframes student-float {
+  0%, 100% {
+    transform: translateY(0) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-1px) rotate(-0.2deg);
+  }
+}
+
+/* ================== Background circles & plus icons ================== */
+.course-label.circle1,
+.course-label.circle2,
+.course-label.circle3,
+.course-label.circle4 {
+  animation: circle-orbit 7s ease-in-out infinite;
+}
+
+.course-label.plus1,
+.course-label.plus2,
+.course-label.plus3,
+.course-label.plus4,
+.course-label.plus5 {
+  animation: plus-orbit 6s ease-in-out infinite;
+}
+
+/* slightly different paths so they don't sync */
+@keyframes circle-orbit {
+  0%   { transform: translate(0, 0) scale(1); }
+  25%  { transform: translate(6px, -4px) scale(1.05); }
+  50%  { transform: translate(0, -8px) scale(1); }
+  75%  { transform: translate(-6px, -4px) scale(1.05); }
+  100% { transform: translate(0, 0) scale(1); }
+}
+
+@keyframes plus-orbit {
+  0%   { transform: translate(0, 0) rotate(0deg) scale(1); }
+  25%  { transform: translate(-4px, -6px) rotate(10deg) scale(1.05); }
+  50%  { transform: translate(0, -10px) rotate(0deg) scale(1); }
+  75%  { transform: translate(4px, -6px) rotate(-10deg) scale(1.05); }
+  100% { transform: translate(0, 0) rotate(0deg) scale(1); }
+}
+
+/* soft glow on circles */
+.course-label.circle1 img,
+.course-label.circle2 img,
+.course-label.circle3 img,
+.course-label.circle4 img {
+  filter: drop-shadow(0 0 6px rgba(81,165,255,0.5));
+}
+
+/* ================== Four main course cards ================== */
+/* base card look */
+.course-label.motion,
+.course-label.digital,
+.course-label.graphic,
+.course-label.uiux {
+  background: #ffffff;
+  border-radius: 999px;
+  box-shadow: 0 10px 24px rgba(0,0,0,0.08);
+  border: none;
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease,
+    border-color 0.25s ease;
+}
+
+/* hover lift + glow */
+.course-label.motion:hover,
+.course-label.digital:hover,
+.course-label.graphic:hover,
+.course-label.uiux:hover {
+  transform: translateY(-8px);
+  box-shadow:
+    0 14px 30px rgba(0,0,0,0.12),
+    0 0 12px rgba(81,165,255,0.5);
+  border-color: #2da9e0;
+}
+
+/* cinematic entry + breathing (apply .hero-card + side class in HTML) */
+.hero-card {
+  opacity: 0;
+  transform-origin: center;
+  border-radius: 999px;
+  background: #ffffff;
+  box-shadow: 0 24px 40px rgba(0,0,0,0.12);
+  border: 1px solid rgba(45,169,224,0.15);
+
+  animation-duration: 0.8s, 4s;
+  animation-timing-function:
+    cubic-bezier(0.2, 0.9, 0.3, 1.4),
+    ease-in-out;
+  animation-fill-mode: forwards;
+  animation-iteration-count: 1, infinite;
+}
+
+/* right side cards */
+.hero-card-right {
+  animation-name: hero-card-in-right, hero-card-breathe;
+}
+
+/* left side cards */
+.hero-card-left {
+  animation-name: hero-card-in-left, hero-card-breathe;
+}
+
+@keyframes hero-card-in-right {
+  0% {
+    opacity: 0;
+    transform:
+      translate3d(0, 0, 0)
+      scale(0.4)
+      rotateY(-35deg);
+    filter: blur(8px);
+  }
+  55% {
+    opacity: 1;
+    transform:
+      translate3d(-10px, -6px, 0)
+      scale(1.05)
+      rotateY(5deg);
+    filter: blur(0);
+  }
+  100% {
+    opacity: 1;
+    transform:
+      translate3d(0, 0, 0)
+      scale(1)
+      rotateY(0deg);
+  }
+}
+
+@keyframes hero-card-in-left {
+  0% {
+    opacity: 0;
+    transform:
+      translate3d(0, 0, 0)
+      scale(0.4)
+      rotateY(35deg);
+    filter: blur(8px);
+  }
+  55% {
+    opacity: 1;
+    transform:
+      translate3d(10px, -6px, 0)
+      scale(1.05)
+      rotateY(-5deg);
+    filter: blur(0);
+  }
+  100% {
+    opacity: 1;
+    transform:
+      translate3d(0, 0, 0)
+      scale(1)
+      rotateY(0deg);
+  }
+}
+
+@keyframes hero-card-breathe {
+  0%, 100% { transform: translateY(0) scale(1); }
+  50%      { transform: translateY(-4px) scale(1.01); }
+}
+
+/* ================== Button shine ================== */
+.course-label button {
+  position: relative;
+  overflow: hidden;
+}
+
+.course-label button::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -40%;
+  width: 40%;
+  height: 100%;
+  background: linear-gradient(
+    120deg,
+    rgba(255,255,255,0),
+    rgba(255,255,255,0.7),
+    rgba(255,255,255,0)
+  );
+  transform: skewX(-20deg);
+  opacity: 0;
+}
+
+.course-label button:hover::after {
+  opacity: 1;
+  animation: btn-shine 0.7s ease-out;
+}
+
+@keyframes btn-shine {
+  0%   { transform: translateX(0)    skewX(-20deg); }
+  100% { transform: translateX(250%) skewX(-20deg); }
+}
+
+
+/* ========= 1200px and below ========= */
+@media (max-width: 1200px) {
+  .hero-title {
+    font-size: 48px;
+    margin-top:0px;
+    width:85%;
+  }
+  .hero{
+    padding:0px;
+  }
+
+  .hero-subtitle {
+    font-size: 32px;
+    margin-top: 60px;
+  }
+  .hero-text{
+    font-size:24px;
+  }
+  .fade-bottom img {
+    max-width: 600px;
+  }
+  .course-label {
+    font-size: 15px;
+    padding: 12px 24px;
+  }
+  .graphic {
+  top: 26.4%;
+  right:2%;
+}
+.motion {
+  top: 38%;
+  left: 0%;
+  z-index: -1;
+}
+.digital{
+  bottom: 20%;
+  left:-5%;
+}
+.uiux {
+  bottom: 15%;
+  right: 0%;
+}
+.circle1{
+    top:25%;
+  left: 25%;
+  background: #ffffffff
+}
+.plus2{
+   top:50%;
+  left: 15%;
+  background: #ffffffff
+}
+.plus3{
+   top:86%;
+  left: 24%;
+  background: #ffffffff
+}
+.plus5{
+   top:56%;
+  left:82%;
+  background: #ffffffff
+}
+
+  .course-label button {
+    padding: 8px 24px;
+    font-size: 15px;
+  }
+}
+
+/* ========= 992px and below ========= */
+@media (max-width: 992px) {
+  .hero-title {
+    font-size: 52px;
+    margin-top:0px;
+    text-align: center;
+  }
+  .hero-subtitle {
+    font-size: 40px;
+    margin-top: 50px;
+    text-align: center;
+  }
+  .hero-text {
+    text-align: center;
+  }
+  .fade-bottom img {
+    max-width: 520px;
+  }
+  .course-label {
+    font-size: 14px;
+    padding: 10px 20px;
+  }
+  .course-label button {
+    padding: 8px 20px;
+    font-size: 14px;
+  }
+}
+
+/* ========= 768px and below ========= */
+@media (max-width: 768px){
+  .navbar-menu {
+     width:400px;
+    }
+    .navbar-menu ul{
+        width:300px;
+        margin-left:10px;
+        margin-top:50px;
+        text-align:left;
+    }
+    .hero{
+      padding:0px;
+    }
+    h1 .hero-title-four{
+      widht:995px;
+    }
+  .hero-title {
+    font-size:36px;
+    
+    margin-top:0px;
+  }
+  .hero-subtitle {
+    font-size: 24px;
+    margin-top: 40px;
+  }
+  .fade-bottom img {
+    max-width: 420px;
+  }
+  .hero-text{
+    font-size:18px;
+  }
+  .course-label {
+    font-size: 13px;
+    padding: 8px 18px;
+  }
+  .course-label button {
+    padding: 6px 18px;
+    font-size: 13px;
+  }
+  .graphic{
+    right:0%;
+  }
+}
+
+/* ========= 430px and below ========= */
+@media (max-width: 500px) {
+  .our-courses{
+  margin-bottom:0px;
+}
+   .navbar-icon{
+    top:40px;
+    right:30px;
+  }
+  .navbar-menu{
+    width:100%;
+    margin:0 auto;
+
+  }
+  #logo{
+    margin:0px;
+  }
+  
+  .navbar-menu ul{
+    text-align:center;
+     margin:0 auto;
+
+  }
+
+  .our.courses{
+    margin-bottom:450px;
+    height:740px;
+  }
+  .col-md-10{
+    margin:30px auto;
+    position:static;
+  }
+ 
+  .hero{
+    padding:0px;
+  }
+  /* Hero section text */
+  .console-container{
+    font-size:32px;
+    line-height:1.2;
+  }
+  
+
+  .hero-subtitle {
+    font-size: 24px;
+    margin-top: 30px;
+  }
+  .hero-text {
+    font-size: 18px;
+    margin-bottom: 20px;
+  }
+
+  /* Image centered */
+  .fade-bottom img {
+    position:static;
+    max-width: 100%;
+    height:500px;
+  }
+  
+
+  /* Course labels become cards */
+  .course-label {
+    position: relative;   /* remove absolute */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    margin: 10px 0;
+    padding: 15px 40px;
+    border-radius: 15px;
+    background: #f5f5f5;
+    font-size: 14px;
+     z-index: 10;
+  }
+
+  /* Button styles inside mobile cards */
+  .course-label button {
+    margin-left: 0px;
+     position: relative;
+    padding: 8px 26px;
+    font-size: 14px;
+     z-index: 20;
+      
+  }
+  .motion{
+  left:-10%;
+  right:0%;
+  top:0%;
+  }
+  .digital{
+    top:0%;
+    right:0%;
+    left:-10%;
+  }
+  .graphic{
+    top:0%;
+    right:0%;
+    left:10%;
+  }
+
+  /* Remove all the absolute positioning classes */
+    .uiux {
+    top:0%;
+    left:10%;
+    right:0%;
+   
+
+  }
+  .circle1{
+    position: absolute;
+    width:49px;
+    top:100px;
+    left: 280px;
+    background: #ffffffff;
+    right: auto !important;
+    bottom: auto !important;
+  }
+  .circle2{
+     position: absolute;
+    top:330px;
+     width:49px;
+    background: #ffffffff;
+    left: -10px;
+    right: auto !important;
+    bottom: auto !important;
+  }
+  .circle3, .circle4{
+    display:none;
+  }
+  .plus5, .plus4{
+    display:none;
+  }
+  .plus1{
+     position: absolute;
+    top:30px;
+    width:49px;
+    background: #ffffffff;
+   left:15px;
+    right: auto !important;
+    bottom: auto !important;
+  }
+  .plus2{
+     position: absolute;
+    top:150px;
+    width:49px;
+    left:300px;
+    background: transparent;
+     right: auto !important;
+    bottom: auto !important;
+  }
+  .plus3{
+     display:none;
+  }
+  .navbar-menu ul li a{
+    font-size: 24px;
+  }
+}
+
+@media (max-width:480px) {
+  .navbar-menu ul li a{
+  font-size: 22px;
+  }
+}
+
+@media (max-width:390px) {
+  .navbar-menu ul li a{
+  font-size: 20px;
+  }
+}
+@media (max-width: 320px)
+{  
+  .navbar-menu ul li a{
+    font-size: 18px;
+  }
+  .our.courses{
+    margin-bottom:500px;
+    height:740px;
+  }
+  .uiux {
+    gap:8px
+  }
+
+  .circle1{
+    position: absolute;
+    width:49px;
+    top:100px;
+    left: 240px;
+    background: #ffffffff;
+    right: auto !important;
+    bottom: auto !important;
+  }
+  .plus2{
+     position: absolute;
+    top:150px;
+    width:49px;
+    left:200px;
+    background: transparent;
+     right: auto !important;
+    bottom: auto !important;
+  }
+  .plus3{
+    position: absolute;
+    top:870px;
+     left:10px;
+      width:49px;
+     background: #ffffffff;
+     right: auto !important;
+    bottom: auto !important;
+  }
+}
+
+/* ========== Course Cards ========== */
+
+/* Section */
+.courses-section {
+  background-color: #f7f9fb;
+  padding: 40px 20px;
+   font-family: 'Inter';
+}
+
+/* Card */
+.course-card {
+  background: #fff;
+  border-radius: 16px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+  margin-bottom: 30px;
+  overflow: hidden;
+  transition: transform 0.3s ease;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+   position: relative;
+   z-index:1;
+   
+}
+
+
+
+.course-card:hover {
+  transform: translateY(-8px) !important;
+}
+
+.course-image {
+  width: 100%;
+  height: 280px;
+  background-size: cover;
+   display: block;  /* IMPORTANT FIX */
+  border-radius: 16px;
+  background-position: center;
+
+}
+
+/* Content */
+.course-content {
+  padding: 20px;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+   position: relative;
+   z-index:10;
+}
+
+.course-category {
+  width:65px;
+  display: inline-block;
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: #88298e;
+  background: #f6e7fa;
+  padding: 4px 10px;
+  border-radius: 8px;
+  margin-bottom: 10px;
+  text-transform: uppercase;
+}
+
+.course-category.marketing {
+ color: #88298e;
+  background: #f6e7fa;
+  width:25%;
+}
+
+.course-title {
+  font-size:25px;
+  font-weight: 600;
+  margin-bottom: 10px;
+  
+}
+
+
+.course-description {
+  line-height: 1.6;
+  color: #696868ff;
+  font-size:17px;
+  flex-grow: 1;
+  margin-bottom: 0px;
+  font-weight: 400;
+   text-align:justify;
+
+}
+
+/* Button */
+button.section-btn-outline-info2{
+  display: inline-flex;              /* centers text */
+  align-items: center;
+  justify-content: center !important;
+  padding: 10px 15px;               /* more horizontal padding */
+  border-radius: 12px;              /* fully pill‑shaped */
+  border: 2px solid #2da9e0;        /* thicker border /          / outline style */
+  color: #000000;
+  font-size: 18px;
+  font-weight: 500;
+  text-decoration: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;          /* needed for sparkles */
+  overflow: hidden; 
+  background: #2da9e0 !important;
+  z-index:20;
+  width:40%;
+  margin:auto;
+}
+
+.section-btn-outline-info2:hover{
+  color: #ffffff;
+}
+
+
+.section-btn-outline-info2::before{
+  content: '';
+  position:absolute;
+  top:0;
+  left:0;
+  width:0%;
+  height:100%;
+  background: rgba(255,255,255,.1);
+}
+.section-btn-outline-info2::after{
+  content:'';
+  position: absolute;
+  top:0;
+  left:-50%;
+  width:50%;
+  height:100%;
+  background: linear-gradient(90deg,transparent,rgba(255,255,255,.4),transparent);
+  transition:0.5s;
+}
+.section-btn-outline-info2:hover::after{
+  left:100%;
+}
+
+
+
+
+
+
+/* ========== Responsive (Courses Section) ========== */
+@media (max-width: 1200px) {
+  .btn-enroll{
+    margin:0px;
+    align-self: center;
+  }
+  .course-category.marketing{
+    width:35%;
+  }
+
+}
+
+/* Medium screens (same as base CSS) */
+@media (max-width: 992px) {
+  /* Keep same */
+}
+
+/* Tablets (same as base CSS) */
+/* Tablet view only (426px to 768px) */
+@media(min-width: 530px) and (max-width: 768px) {
+  .courses-section{
+    position:relative;
+  }
+  .courses-section .row {
+    display: flex;
+    flex-wrap: nowrap;   /* prevent wrapping */
+    overflow-x: auto;    /* enable horizontal scroll */
+    gap: 16px;           /* spacing between cards */
+  }
+  .courses-section-title{
+    line-height: 1;
+  }
+  .courses-section-text{
+     font-size: 20px;
+  }
+
+  .course-card {
+    min-width: 260px;   /* ensure each card has space */
+    flex: 0 0 auto;     /* prevent shrinking */
+  }
+}
+
+/* Mobile screens */
+/* ========== Mobile Responsive (max 425px) ========== */
+@media (max-width: 500px) {
+  .courses-section {
+    padding: 40px 15px;
+
+  }
+  .courses-section-title {
+    line-height: 1;
+    font-size:35px;
+    text-align:center;
+  }
+  .text-center.mb-5
+  {
+    margin-bottom: 0px;
+  }
+
+  .courses-section-text {
+    font-size: 15px;
+    line-height: 1.5;
+    text-align: center;
+    margin-bottom: 32px;
+    text-align:justify;
+    
+  }
+  .course-category.marketing{
+    width:45%;
+  }
+  .course-card {
+    padding:0px 0px 0px 0px ;
+    margin: 0 auto;
+     width:95%; 
+  }
+
+  .course-image {
+    height: 280px;
+    border-radius: 12px;
+   
+  }
+
+  .course-title {
+    font-size: 23px;
+  }
+
+  .course-description {
+    font-size: 17px;
+    line-height: 1.5;
+  }
+
+  .btn-enroll {
+    margin-top:20px;
+    width: 120px;
+    padding: 10px 0px;
+    font-size: 14px;
+    margin-left: 15px 0;
+    text-align: center;
+  }
+  .col-lg-4{
+    padding-top:30px;
+    padding-bottom:30px;
+  }
+  .course-category{
+    font-size:13px;
+    width:100px;
+    text-align:center;
+    margin-bottom:20px;
+  }
+  .course-category.marketing{
+    width:30%;
+  }
+  button.section-btn-outline-info2{
+    margin-top:20px;
+  }
+}
+
+
+
+/* =========cta section========= */
+
+/* cta section */
+.cta-section {
+
+  font-family: 'Inter';
+  margin: 40px 80px;
+  background: #2da9e0;
+  padding: 40px 30px 40px 30px;
+  color: #fff;
+  border-radius: 20px;
+  height: auto; /* desktop height */
+}
+
+.cta-heading {
+  font-size: 48px;
+  font-weight: 600;
+  line-height: 1.2;
+  margin: 0 0 15px 0;
+  margin-top:30px;
+}
+
+.cta-text {
+  margin-top: 20px;
+  font-size: 18px;
+  font-weight: 400;
+  opacity: 0.9;
+  margin-bottom: 0;
+  width:90%;
+}
+
+/* Inputs */
+.form-control {
+  margin-top: 20px;
+  width: 100%;
+  height: 60px;
+  border-radius: 10px;
+  border: none;
+  margin-bottom: 0px;
+  padding: 15px 20px;
+  font-size: 16px;
+  color: #333;
+  font-weight:500;
+}
+
+.form-control::placeholder {
+  color: #2da9e0;
+  font-weight: 400;
+}
+
+/* Contact Button */
+.btn-submit {
+  background: white;
+  width: fit-content;     /* button becomes small */
+  padding: 12px 28px;     /* clean button size */
+  color: #2da9e0;
+  border: none;
+  border-radius: 10px;
+  font-weight: 600;
+  text-decoration: none;
+  display: block;
+  text-align: center;
+  margin-left: auto;       /* pushes button to the RIGHT */
+  margin-top: 25px;
+  transition: all 0.3s ease;
+  font-size: 18px;
+}
+
+.btn-submit:hover {
+  background: #f5f5f5;
+  color: #2298cf;
+}
+
+
+.error {
+    color: rgb(179, 45, 45);
+    font-size: 0.85rem;
+    display: block;
+    margin-top: 4px;
+    font-weight: 500;
+        }
+.form-control.invalid {
+    border: 2px solid red;
+        }
+.form-control.valid {
+    border: 2px solid rgb(10, 233, 10);
+            }
+
+/* ================== CTA RESPONSIVENESS ================== */
+
+/* Large screens down (<=1200px) */
+@media (max-width: 1200px) {
+  .cta-section {
+    margin: 30px 50px;
+    padding: 50px 40px 20px 25px;
+    height: auto; /* let it grow naturally */
+  }
+
+  .cta-heading {
+    font-size: 40px;
+  }
+
+  .cta-text {
+    font-size: 17px;
+  }
+}
+
+/* Medium screens (<=992px) */
+@media (max-width: 992px) {
+  .cta-section {
+    margin: 25px 40px;
+    padding: 40px 30px 20px 20px;
+    height: auto;
+  }
+
+  .cta-heading {
+    font-size: 34px;
+    line-height: 1.3;
+  }
+
+  .cta-text {
+    font-size: 16px;
+  }
+
+  .btn-contact {
+    margin-top: 40px;
+    width: 160px;
+    font-size: 15px;
+  }
+}
+
+/* Tablets (<=768px) */
+@media (max-width: 768px) {
+  .cta-section {
+    margin: 20px;
+    padding: 35px 25px 20px 25px;
+    border-radius: 12px;
+    text-align: center;
+  }
+
+  .cta-heading {
+    font-size: 28px;
+  }
+
+  .cta-text {
+    font-size: 15px;
+  }
+
+  .form-control {
+    height: 55px;
+    font-size: 15px;
+  }
+
+  .btn-submit {
+        width: 25%;
+        float: right;
+        margin: 25px auto 0;
+        font-size: 16px;
+  }
+}
+
+
+/* Small mobiles (<=430px) */
+@media (max-width: 500px) {
+  .cta-section {
+    width:95%;
+    margin: 0 auto ;
+    height: auto; /* Let content decide height */
+    padding: 20px;
+  }
+
+  .cta-heading {
+    font-size: 35px;
+    margin-bottom: 20px;
+    margin-top: 20px;
+    text-align:left;
+  }
+
+
+  .cta-text {
+    width:100%;
+    text-align:left;
+    font-size: 13px;
+    margin-bottom: 20px;
+  }
+
+  /* Show only mobile button */
+  .btn-submit {
+    width: 50%;
+    font-size: 15px;
+    float:left;
+  }
+}
+
+
+/* ========================== FOOTER ================= ===== */
+
+/* ===== Premium gradient using existing blue palette ===== */
+.custom-footer {
+  background: linear-gradient(
+    135deg,
+    #050508 0%,          /* deep near-black */
+    #00172a 25%,         /* dark blue-black */
+    
+    #4AB3FF 65%,         /* electric blue accent */
+    #3b1a5a 80%,         /* dark purple-blue */
+    #A06CFF 100%         /* neon purple edge */
+  );
+  color: #fff;
+  position: relative;
+  padding: 20px 0 0px;
+  overflow:hidden;
+  margin:40px 0 0 0;
+}
+.container-fluid{
+  padding:0px;
+}
+
+/* Shifted columns - 2 tab spaces right (approx 32px) */
+.footer-col{
+  width:20%;
+}
+
+.footer-contact h5{
+ 
+  margin-bottom:30px;
+}
+.footer-contact p{
+  color: #ffffffcc;
+  margin-bottom:20px;
+}
+
+
+/* Menu title styling - matches footer text style */
+.footer-menu-title {
+  font-size: 18px;
+  margin-bottom:30px;
+  font-weight: 500;
+}
+
+/* Layout */
+.footer-main-row {
+  padding:20px 40px;
+  align-items: flex-start;
+}
+
+.footer-left {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.footer-logo {
+  max-width: 100px;
+  height: auto;
+  margin-left:30px;
+  margin-top:-10px;
+}
+
+.footer-text {
+  width: 260px;
+  font-weight: 500;
+  color: #ffffffcc;
+  line-height: 1.7;
+  margin:0px;
+  font-size:18px;
+  margin-left:55px;
+}
+
+/* Social buttons */
+.footer-social {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top:0px;
+  margin-left:50px;
+}
+
+.socials {
+  margin-top:0px;
+  margin-bottom:60px;
+  margin-left:40px;
+  display: flex;
+  padding:0px;
+  align-items: center;
+  gap: 18px;
+  cursor:pointer;
+}
+
+.socials li {
+  list-style: none;
+}
+.socials li a {
+  width: 45px;
+  height: 45px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 30%;
+  background: rgba(255, 255, 255, 0.03);
+  backdrop-filter: blur(6px);
+  box-shadow:
+    0 6px 14px rgba(0,0,0,0.6),
+    inset 0 3px 6px rgba(255,255,255,0.18),
+    inset 0 -4px 10px rgba(0,0,0,0.5);
+  border: 1px solid rgba(255,255,255,0.05);
+  position: relative;
+  overflow: hidden;
+  transition: 0.3s ease;
+}
+
+/* Top shine */
+
+/* Icon size */
+.socials li a img {
+  cursor:pointer;
+  width: 32px;
+  height: 32px;
+  object-fit: contain;
+}
+
+/* Hover effect */
+.socials li a:hover {
+  cursor:pointer;
+  transform: translateY(-4px) scale(1.08);
+  box-shadow:
+    0 10px 18px rgba(0,0,0,0.75),
+    0 0 14px rgba(0,150,255,0.6);
+}
+
+
+
+/* Center menu */
+.footer-menu {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  align-items: flex-start;
+  margin-top: 10px;
+  padding-left:78px;
+}
+
+.footer-link {
+  font-size: 18px;
+  font-weight: 400;
+  color: #ffffffcc;
+  text-decoration: none;
+  position: relative;
+}
+
+/* Right address */
+.footer-address h5 {
+  font-size: 18px;
+  margin-bottom: 20px;
+}
+
+.footer-address p {
+  margin: 0;
+  color: #ffffffcc;
+  line-height: 1.6;
+  font-size:18px;
+}
+
+/* ================= FOOTER BOTTOM ================= */
+.footer-bottom {
+  text-align: center;
+  height: 220px;
+  position: relative;
+  overflow: hidden;
+}
+
+svg {
+  font-family: 'Poppins', sans-serif;
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+   margin-left:2px;
+   font-weight:700;
+}
+
+svg text {
+  text-transform: uppercase;
+  stroke-width: 2;
+  stroke:transparent;
+  fill: transparent;
+  font-size: 354px;
+}
+.footer-animate svg text {
+  animation: stroke 5s ease forwards;
+  animation-delay: 0.1s;
+}
+
+@keyframes stroke {
+  0% {
+    fill: rgba(72,138,204,0);
+    stroke: rgba(255, 255, 255, 1);
+    stroke-dasharray: 0 50%;
+    stroke-dashoffset: 25%;
+  }
+  70% {
+    fill: rgba(72,138,204,0);
+  }
+  100% {
+    fill: #ffffffcc;
+    stroke: rgba(54,95,160,0);
+    stroke-dasharray: 50% 0;
+    stroke-dashoffset: -25%;
+  }
+}
+
+
+/* ===== Hover-only animations ===== */
+.hover-pop {
+  transition: transform 0.3s ease;
+}
+
+.hover-pop:hover {
+  transform: translateY(-2px) scale(1.05);
+}
+
+/* Underline left-to-right on hover */
+.underline-anim {
+  position: relative;
+}
+
+.underline-anim::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -3px;
+  width: 0;
+  height: 1.5px;
+  background: #ffffffcc;
+  transition: width 0.3s ease;
+}
+
+.underline-anim:hover::after {
+  width: 100%;
+}
+
+.nav-link{
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+}
+
+/* underline only text width */
+.underline-animate{
+  position: relative;
+  display: inline-block;
+}
+
+.underline-animate::after{
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -3px;
+  width: 0;
+  height: 1.5px;
+  background: #ffffffcc;
+  transition: width 0.3s ease;
+}
+
+.nav-link:hover .underline-animate::after{
+  width: 100%;
+}
+
+
+@media (max-width: 1200px){
+  .footer-bottom p{  
+    font-size:160px;
+    width:100% !important;
+    line-height:1;
+    height:159px;
+  }
+  .footer-bottom{
+    height:145px;
+  }
+  .footer-menu{
+    padding:0px 0px 0 35px;
+  }
+  .footer-text{
+    width:200px;
+  }
+  svg text{
+    font-size:367px;
+  }
+} 
+
+
+/* ===== Responsiveness: follow existing breakpoints ===== */
+@media (max-width: 992px) {
+  .footer-logo {
+    max-width: 140px;
+  }
+  .footer-text {
+    max-width: 220px;
+  }
+  .footer-menu {
+    margin-top: 20px;
+  }
+  
+}
+
+@media (max-width: 768px) {
+  .custom-footer {
+    text-align: left;
+    padding: 50px 0px ;
+    padding-bottom:0px;
+  }
+  .footer-main-row {
+    row-gap: 2px;
+    padding:10px;
+  }
+  .shifted-col {
+    margin-left: 0;
+  }
+  
+  .socials{
+    margin-left:0px;
+    padding:0PX;
+  }
+  .footer-bottom{
+    margin-top:40px !important;
+    height:109px;
+  }
+  .footer-bottom p{  
+    font-size:120px;
+    line-height:1;
+  }
+  .footer-text{
+    font-size:12px;
+  }
+  .footer-menu-title{
+    font-size:15px;
+  }
+  .footer-link{
+    font-size:12px;
+  }
+  .footer-contact p{
+    font-size:12px;
+  }
+  .footer-contact h5{
+    font-size:15px;
+  }
+  .footer-address h5 {
+    font-size:15px;
+  }
+  .footer-address p {
+    font-size:12px;
+  }
+
+  svg text{
+    font-size:365px;
+  }
+  .socials{
+    margin-bottom:20px;
+    margin-top:30px;
+    margin-left:10px;
+  }
+  
+  
+}
+
+@media (max-width: 500px) {
+  .custom-footer{
+    margin:40px 0 0 0;
+    padding-bottom:0px;
+  }
+
+  .footer-logo{
+    width:110px;
+    margin-left:-10px;
+  }
+
+  .footer-text {
+    width: 250px;
+    font-size:15px;
+  }
+  .footer-menu-title {
+    width:100px;
+    margin-top:20px;
+    margin-bottom:10px;
+    font-size:18px;
+  }
+  .footer-menu{
+    padding-left:0px;
+    margin:0px;
+    
+  }
+  .footer-link{
+    width:90px;
+    font-size:15px;
+  }
+  .footer-contact h5{
+    margin-top:20px;
+    margin-bottom:10px;
+    font-size:18px;
+  }
+  .footer-contact p{
+    width:190px;
+    font-size:15px;
+  }
+  .footer-address h5{
+    width:150px;
+    font-size:18px;
+  }
+  .footer-address p{
+    width:300px;
+    font-size:15px;
+  }
+  
+  .shifted-col{
+    margin:0px !important;
+  }
+   .footer-bottom{
+    height:59px;
+   }
+  svg text{
+    font-size:375px;
+  }
+  .footer-main-row{
+    display:block;
+    padding:20px;
+  }
+
+}
