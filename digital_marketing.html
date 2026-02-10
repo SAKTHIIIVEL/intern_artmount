@@ -22,6 +22,10 @@
       rel="stylesheet" />
   <link href="https://fonts.googleapis.com/css2?family=Anton&display=swap" rel="stylesheet">
 
+    <!-- Common CSS (shared across all pages) -->
+    <link href="common.css" rel="stylesheet" />
+    <!-- Course Common CSS (shared across course detail pages) -->
+    <link href="course-common.css" rel="stylesheet" />
     <link href="digital_marketing.css" rel="stylesheet" />
 </head>
 
@@ -126,6 +130,19 @@ document.addEventListener("DOMContentLoaded", () => {
   }, 400);
 });
 </script>
+<script>
+      window.addEventListener("scroll", function () {
+        const header = document.querySelector(".sticky-header");
+
+        const triggerPoint = 120;
+
+        if (window.scrollY > triggerPoint) {
+          header.classList.add("scrolled");
+        } else {
+          header.classList.remove("scrolled");
+        }
+      });
+    </script>
 
 
     </section>

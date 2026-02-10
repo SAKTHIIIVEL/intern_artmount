@@ -18,6 +18,8 @@
       rel="stylesheet" />
 
   <link href="https://fonts.googleapis.com/css?family=Russo+One" rel="stylesheet">
+  <!-- Common CSS (shared across all pages) -->
+  <link href="common.css" rel="stylesheet">
   <!-- Custom CSS -->
   <link href="portfolio.css" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
@@ -136,6 +138,19 @@
         setInterval(() => {
           cursor.classList.toggle("hidden");
         }, 400);
+      });
+    </script>
+    <script>
+      window.addEventListener("scroll", function () {
+        const header = document.querySelector(".sticky-header");
+
+        const triggerPoint = 120;
+
+        if (window.scrollY > triggerPoint) {
+          header.classList.add("scrolled");
+        } else {
+          header.classList.remove("scrolled");
+        }
       });
     </script>
 
