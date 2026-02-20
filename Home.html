@@ -305,11 +305,38 @@ function clearError(field) {
   field.el.closest('.form-group').classList.remove('error');
 }
 
+/* ================= INPUT RESTRICTIONS ================= */
+
+/* NAME - Only letters & spaces */
+fields.name.el.addEventListener("input", function () {
+  this.value = this.value.replace(/[^A-Za-z\s]/g, "");
+});
+
+/* PHONE - Only numbers, max 10 digits */
+fields.phone.el.addEventListener("input", function () {
+  this.value = this.value.replace(/\D/g, "").slice(0, 10);
+});
+
+/* EMAIL - No spaces allowed */
+fields.email.el.addEventListener("input", function () {
+  this.value = this.value.replace(/\s/g, "");
+});
+
+
 /* Live validation */
 Object.values(fields).forEach(field => {
   field.el.addEventListener('input', () => {
-    if (field.validate(field.el.value.trim())) {
-      clearError(field);
+    const value = field.el.value.trim();
+
+    if (value === "") {
+      clearError(field); // don't show error while empty
+      return;
+    }
+
+    if (!field.validate(value)) {
+      showError(field);   // 🔴 show error instantly
+    } else {
+      clearError(field);  // 🟢 clear when valid
     }
   });
 });
@@ -546,7 +573,7 @@ courseOptions.addEventListener('click', (e) => {
   <!-- ================= COURSES SECTION  ================= -->
   <section class="courses-section scroll-animate fade-trigger">
     <div class="container">
-      <div class="text-center mb-5 revealX reveal-down">
+      <div class="text-center mb-2 revealX reveal-down">
         <h2 class="courses-section-title">Career-Focused <span class="colored-text">Design & Digital Marketing
             Courses</span> in Chennai
         </h2>
@@ -568,7 +595,7 @@ courseOptions.addEventListener('click', (e) => {
               <p class="course-description">
                 Unlock your creative potential with Artmount’s industry-leading Graphic Design and Video Editing courses
                 in Chennai. Learn essential tools like Adobe Photoshop, Illustrator, InDesign, Premiere Pro, and After
-                Effects—preparing you to design brand identities, digital ads, layouts, and professional video content.<br/>Build a strong portfolio through practical, hands-on learning designed to
+                Effects—preparing you to design brand identities, digital ads, layouts, and Professional Video Content.<br/>Build a strong portfolio through practical, hands-on learning designed to
                 make you job-ready. Whether
                 you’re a beginner or looking to upskill, our programs help you elevate your creative capabilities.
               </p>
@@ -588,8 +615,7 @@ courseOptions.addEventListener('click', (e) => {
               <span class="course-category">Design</span>
               <h3 class="course-title">UI/UX Design Certification – Chennai</h3>
               <p class="course-description">
-                Step into the world of user experience and interface design with our 12-week UI/UX certification program in Chennai. Cover everything from user research, wireframing, and prototyping to usability testing and Figma mastery.Perfect for freshers, career switchers, and aspiring designers aiming for roles in top Chennai agencies and startups.<br/>Get industry-ready with projects, case studies, and portfolio
-                guidance.
+                Step into the world of user experience and interface design with our 12-week UI/UX Certification program in Chennai. Cover everything from User Research, Wireframing, and Prototyping To Usability Testing and Figma mastery.Perfect for freshers, career switchers, and aspiring designers aiming for roles in top Chennai agencies and startups.<br/>Get industry-ready with projects, case studies, and portfolio guidance.
               </p>
               <button type="button" class="magic-btn section-btn-outline-info2"
                 onclick="window.location.href='uiux_design.html'">
@@ -608,17 +634,7 @@ courseOptions.addEventListener('click', (e) => {
               <h3 class="course-title">Digital Marketing Course – Chennai</h3>
               <p class="course-description">
                 Master the art of digital marketing with a comprehensive training program in
-                Chennai. Learn
-                SEO, Google
-                Ads, social media marketing, email marketing, and analytics through live
-                campaigns and
-                practical
-                projects. This course equips you with in-demand skills for freelance work,
-                agency jobs, or
-                corporate
-                careers.<br/>Practical, career-focused, and beginner-friendly – no prior
-                experience
-                needed.
+                Chennai. Learn SEO, Google Ads, Social Media Marketing, Email Marketing, and Analytics Through Live Campaigns And Practical Projects. This course equips you with in-demand skills for freelance work, agency jobs, or corporate careers.<br/>Practical, career-focused, and beginner-friendly – no prior experience needed.
               </p>
               <button type="button" class="magic-btn section-btn-outline-info2"
                 onclick="window.location.href='digital_marketing.html'">
@@ -656,7 +672,7 @@ courseOptions.addEventListener('click', (e) => {
   <!-- ================= FEATURES SECTION ================= -->
   <section class="features-section">
     <div class="container">
-      <div class="text-center mb-5">
+      <div class="text-center mb-2 md:mb-5">
         <h2 class="features-section-title reveal-down">Smart Learning, <span class="colored-text">Real Results</span>
         </h2>
         <p class="features-section-text reveal-down">Where every lesson is designed for practical impact, equipping you
@@ -671,7 +687,7 @@ courseOptions.addEventListener('click', (e) => {
             <div class="feature-icon">
               <img src="Icon1.png" alt="feature icon">
             </div>
-            <h4 class="features-section-feature-title">It's live online sessions with industry experts.</h4>
+            <h4 class="features-section-feature-title">Live online sessions with industry experts.</h4>
             <p class="features-section-feature-text">Interact directly with entrepreneurs, designers, and
               marketing professionals through engaging online sessions that bring real-world insights into your
               learning journey.
@@ -797,7 +813,7 @@ courseOptions.addEventListener('click', (e) => {
     <div class="container">
 
       <!-- Title -->
-      <div class="text-center mb-5 test-reveal-down">
+      <div class="text-center mb-2 md:mb-5 test-reveal-down">
         <h2 class="testimonials-section-section-title">
           Hear From Our <span class="colored-text">Students</span>
         </h2>
@@ -971,10 +987,27 @@ courseOptions.addEventListener('click', (e) => {
       const contactForm = document.getElementById("contactForm");
       const submitBtn1 = document.getElementById("desktopSubmit");
 
-      mobileInput.addEventListener("input", function () {
+      /* ================= INPUT RESTRICTIONS ================= */
+
+// Name
+nameInput.addEventListener("input", function () {
+  this.value = this.value.replace(/[^A-Za-z\s]/g, "");
+});
+
+// Email
+emailInput.addEventListener("input", function () {
+  this.value = this.value.replace(/\s/g, "");
+});
+
+// Mobile
+mobileInput.addEventListener("input", function () {
   this.value = this.value.replace(/\D/g, "").slice(0, 10);
 });
 
+// Description
+descInput.addEventListener("input", function () {
+  this.value = this.value.replace(/[^A-Za-z0-9\s.,]/g, "");
+});
       // Regex
       const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
       const mobileRegex = /^[0-9]{10}$/;
@@ -1158,7 +1191,7 @@ if (!isValid) return;
             <h5>Office Address</h5>
             <p>No.4, Alamathi main road, New Vellanur, Avadi, Chennai-600062</p>
 
-            <div style="margin-top: 20px;">
+            <div style="margin-top: 10px;">
               <p>c201a, 19th St, Periyar nagar West, Perambur, Chennai-600082</p>
             </div>
           </div>

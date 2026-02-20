@@ -244,7 +244,7 @@ ul.submenu {
   );
   color: #fff;
   position: relative;
-  padding: 20px 0 0px;
+  padding: 60px 0 0px;
   overflow: hidden;
   margin: 40px 0 0 0;
 }
@@ -556,7 +556,7 @@ svg text {
   text-decoration: none;
   display: block;
   text-align: center;
-  margin-left: auto;
+  margin-left: 40%;
   margin-top: 25px;
   transition: all 0.3s ease;
   font-size: 18px;
@@ -759,6 +759,8 @@ svg text {
   }
   #logo {
     margin: 0px;
+    width: 140px;
+    height: 54px;
   }
   .navbar-icon {
     margin-right: 0px;
@@ -784,6 +786,7 @@ svg text {
   .footer-text {
     width: 250px;
     font-size: 15px;
+    margin-left: 0;
   }
   .footer-menu-title {
     width: 100px;
@@ -807,10 +810,12 @@ svg text {
   .footer-contact p {
     width: 190px;
     font-size: 15px;
+    margin-bottom: 10px;
   }
   .footer-address h5 {
     width: 150px;
     font-size: 18px;
+    margin-bottom: 10px;
   }
   .footer-address p {
     width: 300px;
@@ -841,18 +846,18 @@ svg text {
     font-size: 35px;
     margin-bottom: 20px;
     margin-top: 20px;
-    text-align: left;
+    text-align: center;
   }
   .cta-text {
     width: 100%;
-    text-align: left;
+    text-align: center;
     font-size: 13px;
     margin-bottom: 20px;
   }
   .btn-submit {
     width: 50%;
     font-size: 15px;
-    float: left;
+    float: center;
   }
 }
 

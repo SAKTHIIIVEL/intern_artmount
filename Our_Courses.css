@@ -710,6 +710,25 @@
   .navbar-menu ul li a{
     font-size: 24px;
   }
+   .course-label.motion:hover,
+  .course-label.digital:hover,
+  .course-label.graphic:hover,
+  .course-label.uiux:hover {
+    transform: none ;
+    box-shadow: none ;
+    border-color: transparent ;
+  }
+  .reveal-left,
+  .reveal-right {
+    transform: none ;
+  }
+  .motion,
+.digital,
+.graphic,
+.uiux {
+  left: 0 ;
+  right: 0 ;
+}
 }
 
 @media (max-width:480px) {
@@ -1018,9 +1037,9 @@ button.section-btn-outline-info2{
     text-align:center;
     margin-bottom:20px;
   }
-  .course-category.marketing{
+  /* .course-category.marketing{
     width:30%;
-  }
+  } */
   button.section-btn-outline-info2{
     margin-top:20px;
   }
@@ -1090,7 +1109,7 @@ button.section-btn-outline-info2{
   text-decoration: none;
   display: block;
   text-align: center;
-  margin-left: auto;       /* pushes button to the RIGHT */
+  margin-left: 40%;       /* pushes button to the RIGHT */
   margin-top: 25px;
   transition: all 0.3s ease;
   font-size: 18px;
@@ -1203,13 +1222,13 @@ button.section-btn-outline-info2{
     font-size: 35px;
     margin-bottom: 20px;
     margin-top: 20px;
-    text-align:left;
+    text-align:center;
   }
 
 
   .cta-text {
     width:100%;
-    text-align:left;
+    text-align:center;
     font-size: 13px;
     margin-bottom: 20px;
   }
@@ -1218,7 +1237,8 @@ button.section-btn-outline-info2{
   .btn-submit {
     width: 50%;
     font-size: 15px;
-    float:left;
+    float:center;
+    margin-right: 25%;
   }
 }
 
@@ -1594,51 +1614,51 @@ svg text {
 }
 
 @media (max-width: 500px) {
-  .custom-footer{
-    margin:40px 0 0 0;
-    padding-bottom:0px;
+  .custom-footer {
+    margin: 40px 0 0 0;
+    padding-bottom: 0px;
   }
-
-  .footer-logo{
-    width:110px;
-    margin-left:-10px;
+  .footer-logo {
+    width: 110px;
+    margin-left: -10px;
   }
-
   .footer-text {
     width: 250px;
-    font-size:15px;
+    font-size: 15px;
+    margin-left: 0;
   }
   .footer-menu-title {
-    width:100px;
-    margin-top:20px;
-    margin-bottom:10px;
-    font-size:18px;
+    width: 100px;
+    margin-top: 20px;
+    margin-bottom: 10px;
+    font-size: 18px;
   }
-  .footer-menu{
-    padding-left:0px;
-    margin:0px;
-    
+  .footer-menu {
+    padding-left: 0px;
+    margin: 0px;
   }
-  .footer-link{
-    width:90px;
-    font-size:15px;
+  .footer-link {
+    width: 90px;
+    font-size: 15px;
   }
-  .footer-contact h5{
-    margin-top:20px;
-    margin-bottom:10px;
-    font-size:18px;
+  .footer-contact h5 {
+    margin-top: 20px;
+    margin-bottom: 10px;
+    font-size: 18px;
   }
-  .footer-contact p{
-    width:190px;
-    font-size:15px;
+  .footer-contact p {
+    width: 190px;
+    font-size: 15px;
+    margin-bottom: 10px;
   }
-  .footer-address h5{
-    width:150px;
-    font-size:18px;
+  .footer-address h5 {
+    width: 150px;
+    font-size: 18px;
+    margin-bottom: 10px;
   }
-  .footer-address p{
-    width:300px;
-    font-size:15px;
+  .footer-address p {
+    width: 300px;
+    font-size: 15px;
   }
   
   .shifted-col{

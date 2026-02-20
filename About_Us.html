@@ -100,7 +100,7 @@
       window.addEventListener("scroll", function () {
         const header = document.querySelector(".sticky-header");
 
-        const triggerPoint = 120;
+        const triggerPoint = 0;
 
         if (window.scrollY > triggerPoint) {
           header.classList.add("scrolled");
@@ -177,7 +177,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   <!-- Team Section -->
   <section class="team-section">
-    <div class="container">
+    <div class="containerts">
       <div class="team-grid">
         <div class="team-member team-member-1">
           <div class="team-member-name">Mr.Nandha Kumar</div>
@@ -223,7 +223,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   <!-- ================= CTA Section ================= -->
   <section class="cta-section cta-reveal-up">
-    <div class="container">
+    <div class="container_cta">
       <div class="row">
         <!-- Left content -->
         <div class="col-lg-6">
@@ -273,6 +273,26 @@ document.addEventListener("DOMContentLoaded", () => {
       const emailError = document.getElementById("emailError");
       const mobileError = document.getElementById("mobileError");
       const descError = document.getElementById("descriptionError");
+
+      // Name
+nameInput.addEventListener("input", function () {
+  this.value = this.value.replace(/[^A-Za-z\s]/g, "");
+});
+
+// Email
+emailInput.addEventListener("input", function () {
+  this.value = this.value.replace(/\s/g, "");
+});
+
+// Mobile
+mobileInput.addEventListener("input", function () {
+  this.value = this.value.replace(/\D/g, "").slice(0, 10);
+});
+
+// Description
+descInput.addEventListener("input", function () {
+  this.value = this.value.replace(/[^A-Za-z0-9\s.,]/g, "");
+});
 
       // Regex
       const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
