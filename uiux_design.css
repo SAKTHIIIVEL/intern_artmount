@@ -785,7 +785,7 @@ font-size:30px;
   text-decoration: none;
   display: block;
   text-align: center;
-  margin-left: 40%;       /* pushes button to the RIGHT */
+  margin-left: auto;       /* pushes button to the RIGHT */
   margin-top: 25px;
   transition: all 0.3s ease;
   font-size: 18px;

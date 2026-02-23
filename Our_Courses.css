@@ -891,7 +891,7 @@ button.section-btn-outline-info2{
   overflow: hidden; 
   background: #2da9e0 !important;
   z-index:20;
-  width:40%;
+  width:50%;
   margin:auto;
 }
 
@@ -1109,7 +1109,7 @@ button.section-btn-outline-info2{
   text-decoration: none;
   display: block;
   text-align: center;
-  margin-left: 40%;       /* pushes button to the RIGHT */
+  margin-left: auto;       /* pushes button to the RIGHT */
   margin-top: 25px;
   transition: all 0.3s ease;
   font-size: 18px;

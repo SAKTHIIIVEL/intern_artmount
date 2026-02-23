@@ -178,6 +178,10 @@
   font-weight: normal;
 }
 
+.contact-mobile{
+  display: none;
+}
+
 .contact-hours2{
   color: #000000 !important;
     font-size: 24px !important;     /*font-size: 20px*/
@@ -485,6 +489,14 @@ h1, h2, h3, h4, h5, h6 {
         font-size: 14px !important;
         height: auto;
         width: 150px;
+        margin-bottom: 10px;
+    }
+    .contact-mobile{
+      display: block;
+    }
+
+    .contact-assistance{
+      display: none;
     }
 .navbar-menu ul li a{
     font-size: 24px;
