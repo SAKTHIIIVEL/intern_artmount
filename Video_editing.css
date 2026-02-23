@@ -789,7 +789,7 @@ font-size:30px;
   flex-wrap: wrap;
   gap: 10px;
   margin-top:0px;
-  margin-left:50px;
+  margin-left:20px;
 }
 
 .socials {
@@ -1137,8 +1137,10 @@ svg text {
     font-size:375px;
   }
   .footer-main-row{
-    display:block;
-    padding:20px;
+     display: flex;
+    flex-direction: column;
+    row-gap: 30px;   /* Adjust gap here */
+    padding: 20px;
   }
 
 }
