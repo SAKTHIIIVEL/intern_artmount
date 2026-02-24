@@ -2211,6 +2211,11 @@ button.section-btn-outline-info2{
   opacity: 1;
   transform: translateY(0);
 }
+.explore-more-btn {
+  width: auto;          /* Prevent full width */
+  padding: 12px 40px;   /* Control button size */
+  display: inline-block;
+}
 
 
 /* ========== Responsive Testimonials Section ========== */
